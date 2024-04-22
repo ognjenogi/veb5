@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Post {
     private  Integer id;
+    private String date;
     @NotNull(message = "Title field is required")
     @NotEmpty(message = "Title field is required")
     private  String author;
@@ -23,15 +24,16 @@ public class Post {
         comments = new ArrayList<>();
     }
 
-    public Post(String author, String title, String content) {
+    public Post(String author, String title, String content,String date) {
         this();
+        this.date = date;
         this.author = author;
         this.title = title;
         this.content = content;
     }
 
-    public Post(Integer id, String author, String title, String content) {
-        this(author, title, content);
+    public Post(Integer id, String author, String title, String content,String date) {
+        this(author, title, content,date);
         this.id = id;
     }
 
@@ -73,5 +75,13 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -124,13 +124,13 @@ function addComment(event) {
 }
 
 
-// Function to show the new post form
+
 function showNewPostForm() {
     hideElement(postsContainer);
     hideElement(postDetails);
     showElement(newPostForm);
 }
-// Function to create a new post
+
 function createPost(event) {
     event.preventDefault();
     const title = postTitleInput.value.trim();
@@ -172,20 +172,19 @@ function createPost(event) {
 }
 
 
-// Function to show an element
+
 function showElement(element) {
     element.classList.remove('hidden');
 }
 
-// Function to hide an element
+
 function hideElement(element) {
     element.classList.add('hidden');
 }
 
-// Event listeners
 commentForm.addEventListener('submit', addComment);
 newPostBtn.addEventListener('click', showNewPostForm);
 newPostForm.addEventListener('submit', createPost);
 
-// Initial rendering of posts
+
 renderPosts();
